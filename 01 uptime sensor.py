@@ -34,9 +34,11 @@ def uptime_sensor():
         response
         time.sleep(2)
         if response == 0:
-            return response
+            DNS = "Host is up"
         else:
-            return response
+            DNS = "Host is down"
+
+        return DNS
         print(response + datetime.datetime.now + destination)
 
 uptime_sensor()
