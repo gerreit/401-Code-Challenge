@@ -84,9 +84,9 @@ def Check_Password():
 # Main
 menu = input("Press 1 to use a dictionary attack  Press 2 to check your password: ")
 if menu == "1":
-    Brute_Force
+    Brute_Force()
 elif menu == 2: 
-    Check_Password  
+    Check_Password()  
 #else:
     print("Theres been an error") 
 
