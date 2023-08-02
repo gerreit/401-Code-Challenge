@@ -102,7 +102,7 @@ def ssh_login():
     # adds a policy if there is one missing?
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     # For each password in the password list 
-    for password in password_list:
+    for password in file:
         try:
             # uses the ssh variable to try the given IP, username, and password to login
             ssh.connect(ip, 22, username, password_list, timeout=3)  
