@@ -7,8 +7,8 @@
 # Instructions:
 
 # Prompt the user to type in a file name to search for.
-# input variable for file name
-# Prompt the user for a directory to search in.
+#  input variable for file name
+# Prompt the user for a directory to search in 
 #  input a variable for file path
 # Search each file in the directory by name.
 #  need to look this up, it reminds me of the file.readline from a few weeks ago
