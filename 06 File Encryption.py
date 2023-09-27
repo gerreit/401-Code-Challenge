@@ -34,22 +34,35 @@
 
 # Imported Libraries:
 from cryptography.fernet import Fernet
+import os
 
 # makes key for encryption/decryption
-def make_key():
+#def make_key():
     # saves Fernet.generate_key() as a variable, this is to make this easier to call and for cleaner looking code
-    key = Fernet.generate_key()
+    #key = Fernet.generate_key()
     # with your key open as a key file write in binary a generated key
-    with open("key.key", "wb") as key_file:
-        key_file.write(key)
+    #with open("key.key", "wb") as key_file:
+        #key_file.write(key)
+
 
 # function to load previously made keys
-def load_key():
-    return open("key.key", "rb").read()
+#def load_key():
+    #return open("key.key", "rb").read()
+
+def make_or_load_key():
+    # if there is load it
+    if os.path.isfile("key.key"):
+        # If the key file exists, load the existing key
+        key = open("key.key", "rb").read()
+    # if not make a new one
+    else:
+        key = Fernet.generate_key()
+        with open("key.key", "wb") as key_file:
+            key_file.write(key)
 
 
 # calls the function to load a previously made key, you would need it to decrypt already encrypted files
-key = load_key()
+key = make_or_load_key()
 
 # makes a function for encrypting messages
 def encrypt_message():
