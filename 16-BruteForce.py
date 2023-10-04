@@ -61,12 +61,12 @@ def Brute_Force():
         # uses time library to sleep for one second
         time.sleep(1)
         # changes the line variable to read lines from the file. This will move on to the next line
-        line = file.readline
+        line = file.readline()
     # when there are no more lines to read closes the file
     file.close()
 
 def Check_Password():
-    File_Path = input("Input a file path to check for passwrod ")
+    File_Path = input("Input a file path to check for password ")
     Password_to_check = input("Input a password to check")
     file = open(File_Path, "r")
     line = file.readline()
@@ -85,7 +85,7 @@ def Check_Password():
 menu = input("Press 1 to use a dictionary attack  Press 2 to check your password: ")
 if menu == "1":
     Brute_Force()
-elif menu == 2: 
+elif menu == "2": 
     Check_Password()  
 #else:
     print("Theres been an error") 
